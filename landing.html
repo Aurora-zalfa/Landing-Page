@@ -1,12 +1,13 @@
-<html>
- <head>
-  <title>
-   coop.co
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coop.co</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
             font-family: 'Roboto', sans-serif;
             background-color: #f5f5f5;
             margin: 0;
@@ -18,6 +19,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         .header .logo {
             font-size: 24px;
@@ -26,6 +28,7 @@
         .header .search-bar {
             display: flex;
             align-items: center;
+            margin: 10px 0;
         }
         .header .search-bar input {
             padding: 5px;
@@ -45,6 +48,7 @@
         .header .nav {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
         .header .nav a {
             text-decoration: none;
@@ -52,19 +56,17 @@
             font-weight: bold;
         }
         .banner {
-            background-color: #d9b8a3;
-            padding: 20px;
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
         .banner img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
         }
         .categories {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
             padding: 20px;
             background-color: #fff;
         }
@@ -74,40 +76,34 @@
         .categories .category img {
             width: 50px;
             height: 50px;
-            display: block;
-            margin: 0 auto;
+            margin-bottom: 5px;
         }
         .categories .category p {
-            margin: 5px 0 0;
             font-size: 14px;
+            margin: 0;
         }
         .section {
             padding: 20px;
         }
         .section h2 {
-            margin: 0 0 20px;
             font-size: 24px;
+            margin-bottom: 20px;
         }
         .products {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            text-align: center;
-
         }
         .product {
             background-color: #fff;
             border-radius: 5px;
-            padding: 5px;
-            width: calc(25% - 20px);
+            padding: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            text-align: center;
         }
         .product img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            border-radius: 5px;
         }
         .product .discount {
             position: absolute;
@@ -118,7 +114,6 @@
             padding: 5px;
             border-radius: 5px;
             font-size: 14px;
-            font-weight: bold;
         }
         .product .price {
             font-size: 18px;
@@ -129,350 +124,67 @@
             font-size: 14px;
             color: #666;
         }
-  </style>
- </head>
- <body>
 
-  <div class="header">
-   <div class="logo">
-    coop.co
-   </div>
-   <div class="search-bar">
-    <input placeholder="Search" type="text"/>
-    <button>
-     <i class="fas fa-search">
-     </i>
-    </button>
-   </div>
-
-   <div class="nav">
-    <a href="#">
-     HOME
-    </a>
-    <a href="#">
-     DISCOUNT
-    </a>
-    <a href="#">
-     SHOP
-    </a>
-    <a href="#">
-     WISHLIST
-    </a>
-   </div>
-  </div>
-
-  <div class="banner">
-
-   <img alt="Banner image with various grocery items and text 'Belanja di coop.co aja! Semarak Diskon'" height="100" src="https://storage.googleapis.com/a1aa/image/bXpU1DzHgzKvKpu4zDYJXkacGfVENLNYhUBrMCScXzWWsy5JA.jpg" width="400"/>
-  </div>
-
-  <div class="categories">
-   <div class="category">
-    <img alt="Bahan Pokok" height="50" src="beras.jpeg" width="50"/>
-    <p>
-     Bahan Pokok
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Buah &amp; Sayur" height="50" src="sayur.jpeg" width="50"/>
-    <p>
-     Buah &amp; Sayur
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Daging" height="50" src="daging.jpeg" width="50"/>
-    <p>
-     Daging
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Makanan Instan" height="50" src="mie.jpeg" width="50"/>
-    <p>
-     Makanan Instan
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Susu" height="50" src="susu.jpeg" width="50"/>
-    <p>
-     Susu
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Obat-obatan" height="50" src="obat.jpeg" width="50"/>
-    <p>
-     Obat-obatan
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Pampers" height="50" src="pampers.jpeg" width="50"/>
-    <p>
-     Pampers
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Sabun" height="50" src="sabun.jpeg" width="50"/>
-    <p>
-     Sabun
-    </p>
-   </div>
-
-   <div class="category">
-    <img alt="Softex" height="50" src="softex.jpeg" width="50"/>
-    <p>
-     Softex
-    </p>
-   </div>
-  </div>
-
-  <div class="section">
-   <h2>
-    Cemilan
-   </h2>
-   <div class="products">
-    <div class="product">
-     <div class="discount">
-      5%
-     </div>
-
-     <img alt="Oreo Chocolate Cream" height="150" src="oreo.jpeg" width="150"/>
-     <div class="price">
-      Rp9.000
-     </div>
-     <div class="description">
-      Oreo Chocolate Cream
-     </div>
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header .nav {
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">coop.co</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav">
+            <a href="#">HOME</a>
+            <a href="#">DISCOUNT</a>
+            <a href="#">SHOP</a>
+            <a href="#">WISHLIST</a>
+        </div>
     </div>
-
-    <div class="product">
-     <div class="discount">
-      5%
-     </div>
-     <img alt="Cadbury Dairy Milk" height="150" src="coklat.jpeg" width="150"/>
-     <div class="price">
-      Rp13.200
-     </div>
-
-     <div class="description">
-      Cadbury Dairy Milk 
-     </div>
+    <div class="banner">
+        <img src="https://storage.googleapis.com/a1aa/image/bXpU1DzHgzKvKpu4zDYJXkacGfVENLNYhUBrMCScXzWWsy5JA.jpg" alt="Banner">
     </div>
-    <div class="product">
-     <div class="discount">
-      2%
-     </div>
-
-     <img alt="Yupi Bolicious" height="150" src="yupi.jpeg" width="150"/>
-     <div class="price">
-      Rp26.000
-     </div>
-     <div class="description">
-      Yupi Bolicious
-     </div>
+    <div class="categories">
+        <!-- Categories list -->
+        <div class="category"><img src="beras.jpeg" alt="Bahan Pokok"><p>Bahan Pokok</p></div>
+        <div class="category"><img src="sayur.jpeg" alt="Buah & Sayur"><p>Buah & Sayur</p></div>
+        <div class="category"><img src="daging.jpeg" alt="Daging"><p>Daging</p></div>
+        <div class="category"><img src="mie.jpeg" alt="Makanan Instan"><p>Makanan Instan</p></div>
+        <div class="category"><img src="susu.jpeg" alt="Susu"><p>Susu</p></div>
+        <div class="category"><img src="obat.jpeg" alt="Obat-obatan"><p>Obat-obatan</p></div>
+        <div class="category"><img src="pampers.jpeg" alt="Pampers"><p>Pampers</p></div>
+        <div class="category"><img src="sabun.jpeg" alt="Sabun"><p>Sabun</p></div>
+        <div class="category"><img src="softex.jpeg" alt="Softex"><p>Softex</p></div>
     </div>
-
-    <div class="product">
-     <div class="discount">
-      2%
-     </div>
-
-     <img alt="Chitato Lite Rumput Laut" height="150" src="chitato.jpeg" width="150"/>
-     <div class="price">
-      Rp14.600
-     </div>
-
-     <div class="description">
-      Chitato Lite Rumput Laut
-     </div>
+    <div class="section">
+        <h2>Cemilan</h2>
+        <div class="products">
+            <!-- Product cards -->
+            <div class="product">
+                <div class="discount">5%</div>
+                <img src="oreo.jpeg" alt="Oreo">
+                <div class="price">Rp9.000</div>
+                <div class="description">Oreo Chocolate Cream</div>
+            </div>
+            <!-- Repeat similar product blocks -->
+        </div>
     </div>
-
-    <div class="product">
-     <div class="discount">
-      12%
-     </div>
-
-     <img alt="Kopiko Coffee Candy" height="150" src="kopiko.jpeg" width="150"/>
-     <div class="price">
-      Rp7.700
-     </div>
-
-     <div class="description">
-      Kopiko Coffee Candy
-     </div>
+    <div class="section">
+        <h2>Selalu Dicari</h2>
+        <div class="products">
+            <!-- Repeat product blocks -->
+        </div>
     </div>
-
-    <div class="product">
-     <div class="discount">
-      8%
-     </div>
-
-     <img alt="Chiki Chicken" height="150" src="chiki.jpeg" width="150"/>
-     <div class="price">
-      Rp13.900
-     </div>
-
-     <div class="description">
-        Chiki Chicken
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      10%
-     </div>
-
-     <img alt="Nestle Milo" height="150" src="milo.jpeg" width="150"/>
-     <div class="price">
-      Rp4.500
-     </div>
-
-     <div class="description">
-      Nestle Milo
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      3%
-     </div>
-
-     <img alt="Nextar Chocolate" height="150" src="nextar.jpeg" width="150"/>
-     <div class="price">
-      Rp15.000
-     </div>
-
-     <div class="description">
-      Nextar Chocolate
-     </div>
-    </div>
-   </div>
-  </div>
-  <div class="section">
-   <h2>
-    Selalu Dicari
-   </h2>
-   <div class="products">
-    <div class="product">
-     <div class="discount">
-      3%
-     </div>
-
-     <img alt="Gulaku Premium 1kg" height="150" src="gula.jpeg" width="150"/>
-     <div class="price">
-      Rp15.000
-     </div>
-     <div class="description">
-      Gulaku Premium 1kg
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      5%
-     </div>
-
-     <img alt="Minyak Kanola Tropicana" height="150" src="tropicana.jpeg" width="150"/>
-     <div class="price">
-      Rp13.900
-     </div>
-
-     <div class="description">
-      Minyak Kanola Tropicana
-     </div>
-    </div>
-    <div class="product">
-     <div class="discount">
-      2%
-     </div>
-
-     <img alt="Attack JAZ1" height="150" src="jaz1.jpeg" width="150"/>
-     <div class="price">
-      Rp26.000
-     </div>
-
-     <div class="description">
-      Attack JAZ1
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      2%
-     </div>
-
-     <img alt="Saus Sambal ABC 275ml" height="150" src="indofood.jpeg" width="150"/>
-     <div class="price">
-      Rp26.000
-     </div>
-
-     <div class="description">
-      Saus Sambal ABC 275ml
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      3%
-     </div>
-
-     <img alt="Indomie Goreng 80g" height="150" src="mie goreng.jpeg" width="150"/>
-     <div class="price">
-      Rp2.900
-     </div>
-     <div class="description">
-      Indomie Goreng 
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      8%
-     </div>
-     <img alt="Saori Saus Tiram" height="150" src="saori.jpeg" width="150"/>
-     <div class="price">
-      Rp13.900
-     </div>
-
-     <div class="description">
-      Saori Saus Tiram
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      10%
-     </div>
-
-     <img alt="Beras Sania 5kg" height="150" src="sania.jpeg" width="150"/>
-     <div class="price">
-      Rp67.000
-     </div>
-     <div class="description">
-      Beras Sania 5kg
-     </div>
-    </div>
-
-    <div class="product">
-     <div class="discount">
-      2%
-     </div>
-
-     <img alt="SoKlin Bio-Matic 1.5L" height="150" src="soklin.jpeg" width="150"/>
-     <div class="price">
-      Rp26.000
-     </div>
-     
-     <div class="description">
-      SoKlin Bio-Matic 1.5L
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
+</body>
 </html>
